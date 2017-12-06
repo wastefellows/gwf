@@ -70,7 +70,7 @@ body {
     bottom: -1px;
 }
 
-.logo-banner{
+.logo-banner {
     position: absolute;
     left: 49.7%;
     transform: translateX(-50%);
@@ -79,8 +79,8 @@ body {
 }
 
 
-.logo-banner img{
-  width: 80px;
+.logo-banner img {
+    width: 80px;
     height: auto !important;
 }
 
@@ -104,8 +104,119 @@ body {
 }
 
 /* ==========================================================================
+                       members
+   ========================================================================== */
+.mem-main-wrap{
+    margin: 60px 0px;
+}
+
+.member_wrap{
+    margin: 25px 0px;
+}
+
+.member_blk {
+    width: 31.33%;
+    margin: 0 0 2% 2%;
+    float: left;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #dfdfdf;
+    border-radius: 7px;
+    transform: translateY(0);
+    transition: all 0.5s ease 0s;
+
+}
+
+.member_blk:nth-child(3n + 1) {
+    margin-left: 0;
+}
+
+.member_blk .member_img {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.member_blk .member_img img {
+    width: 100%;
+}
+
+.member_blk a {
+    color: #000;
+    text-decoration: none;
+}
+
+.member_blk h5 {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.member_blk p {
+    font-size: 12px;
+}
+
+.member_blk p:last-child {
+    margin: 0;
+}
+
+.member_blk:hover {
+    transform: translateY(-10px);
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
                         Media queries
    ========================================================================== */
+
+@media(max-width: 1199px) {
+    .member_blk .member_img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+
+@media(max-width: 991px) {
+    .member_blk {
+        width: 23.5%;
+    }
+    .member_blk:nth-child(6n + 1) {
+        margin-left: 2%;
+    }
+    .member_blk:nth-child(4n + 1) {
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 610px) {
+    .member_blk {
+        width: 48%;
+        margin: 0 0 4% 4%;
+    }
+    .member_blk:nth-child(4n + 1) {
+        margin-left: 4%;
+    }
+    .member_blk:nth-child(2n + 1) {
+        margin-left: 0;
+    }
+}
 
 @media (min-width: 768px) {
 
@@ -169,10 +280,10 @@ body {
         color: #4B476B;
         line-height: 22px;
     }
-    .logo-banner img{
-  width: 55px;
-    height: auto !important;
-   
-}
+    .logo-banner img {
+        width: 55px;
+        height: auto !important;
+
+    }
 
 }
