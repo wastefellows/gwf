@@ -168,19 +168,92 @@ body {
     box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
+#reg{
+    margin-bottom: 40px;
+}
 
 
+/* ==========================================================================
+                             Gallery
+   ========================================================================== */
 
 
+.gallery-wrap{
+    margin: 40px 0px;
+}.gallery-wrap h2{
+    margin: 40px 0px;
+    text-align: center;
+}
+
+.img-set-img{
+     width: 31.33%;
+    margin: 0 0 2% 2%;
+    float: left;
+    display: inline-block;
+}
+
+.img-set-img img{
+    width:100%;
+}
+
+.img-set-img:nth-child(3n+1){
+    margin-left: 0;
+}
+
+.flash-button{
+	background:blue;
+	padding:25px 10px;
+	color:#fff;
+	border:none;
+	border-radius:5px;
+    width: 50%;
+    font-size: 30px;
+	
+	animation-name: flash;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	
+	-webkit-animation-name: flash;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+
+	
+	-moz-animation-name: flash;
+	-moz-animation-duration: 1s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+}
+
+@keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
 
 
+@-webkit-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
 
 
+@-moz-keyframes flash {  
+    0% { opacity: 1.0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1.0; }
+}
 
+.footer-wrap{
+border-top:1px solid #555; 
+}
 
-
-
-
+.footer-wrap p{
+    padding: 20px 0px;
+}
 /* ==========================================================================
                         Media queries
    ========================================================================== */
@@ -207,15 +280,17 @@ body {
 
 @media(max-width: 610px) {
     .member_blk {
-        width: 48%;
-        margin: 0 0 4% 4%;
+        width: 100%;
+        margin: 10px 0px;
     }
+/*
     .member_blk:nth-child(4n + 1) {
         margin-left: 4%;
     }
     .member_blk:nth-child(2n + 1) {
         margin-left: 0;
     }
+*/
 }
 
 @media (min-width: 768px) {
@@ -284,6 +359,11 @@ body {
         width: 55px;
         height: auto !important;
 
+    }
+    
+    .flash-button{
+        font-size: 14px;
+        padding: 10px 10px;
     }
 
 }
