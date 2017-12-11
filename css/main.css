@@ -378,3 +378,7 @@ border-top:1px solid #555;
 .textarea  {
 	resize: none;
 }
+
+sup{
+    color: red;
+}
