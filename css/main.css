@@ -97,10 +97,14 @@ body {
 
 .main-content {
     margin: 10px auto;
-    width: 80%;
     font-size: 18px;
     color: #4B476B;
     line-height: 36px;
+    text-align: justify;
+}
+
+.dk{
+    color: darkblue;
 }
 
 /* ==========================================================================
@@ -381,4 +385,5 @@ border-top:1px solid #555;
 
 sup{
     color: red;
+    
 }
