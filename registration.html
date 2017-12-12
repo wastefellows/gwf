@@ -66,31 +66,37 @@
             </div>
         </header>
         <section>
-            <div class="index-banner">
-                <img src="img/Gopuram.png" />
-                <div class="logo-banner">
-                    <img src="img/Logo.png" />
-                </div>
-            </div>
-        </section>
-        <section>
             <div class="container">
-                <div class="mem-main-wrap">
-                    <h2 class="text-center">Registration Form</h2>
+                <div class="jumbotron payment-details">
+                    <h3>Bank Account Details</h3><hr>
+                    <p>SB Account Name: Giants Group of Madurai, Tamilnad Mercantile Bank.</p>
+                    <p>IFS Code: TMBL0000093</p>
+                    <p>Account No: 093100050300749</p>
+                    <p>Branch Name: Simakkal Branch, Madurai</p>
+                </div>
+                <div class="mem-main-wrap reg-main">
                     <div class="panel panel-primary reg-panel">
-                        <div class="panel-heading">Enter Your Details Here
+                        <div class="panel-heading text-center">Register Here | Giants Group of Madurai
+                        </div>
+                        <div class="note">
+                            <h5><strong>Note: Kindly register after payment.
+                            Confirmation on your payment will be sent to you through mail.</strong>
+                            </h5>
                         </div>
                         <div class="panel-body">
                             <form name="myform" method="post" action="api/registration/insert_details.php" onsubmit="return validateForm()">
-                                <div class="form-group">
-                                    <label for="transactionId">Transaction ID <sup>*</sup></label>
-                                    <input id="transactionId" name="transactionId" class="form-control" type="text" data-validation="required">
-                                    <span id="error_transationId" class="text-danger"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="myName">Name <sup>*</sup></label>
-                                    <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
-                                    <span id="error_name" class="text-danger" role="alert"></span>
+                                <div class="row form-group">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="transactionId">Transaction ID <sup>*</sup></label>
+                                        <input id="transactionId" name="transactionId" class="form-control" type="text" data-validation="required">
+                                        <span id="error_transationId" class="text-danger"></span>
+                                        <small class="trans-note"><strong>Please enter your payment transaction id.</strong></small>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="myName">Name <sup>*</sup></label>
+                                        <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
+                                        <span id="error_name" class="text-danger" role="alert"></span>
+                                    </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
