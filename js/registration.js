@@ -13,7 +13,7 @@ function validateForm() {
 
     //TransactionId Validation
     if (transationId === "") {
-        document.getElementById('error_transationId').innerHTML = "Please Enter a transationId";
+        document.getElementById('error_transationId').innerHTML = "Please Enter a Transation Id<br>";
         return false;
     }
     else {
@@ -49,7 +49,7 @@ function validateForm() {
 
     //address Validation
     if (address === "") {
-        document.getElementById('error_address').innerHTML = "Please Enter a Name";
+        document.getElementById('error_address').innerHTML = "Please Enter Address";
         return false;
     }
     else {
@@ -58,7 +58,7 @@ function validateForm() {
 
     //city Validation
     if (city === "") {
-        document.getElementById('error_city').innerHTML = "Please Enter city";
+        document.getElementById('error_city').innerHTML = "Please Enter City";
         return false;
     }
     else {
@@ -67,7 +67,7 @@ function validateForm() {
 
     //state Validation
     if (state === "") {
-        document.getElementById('error_state').innerHTML = "Please Enter state";
+        document.getElementById('error_state').innerHTML = "Please Enter State";
         return false;
     }
     else {
@@ -76,7 +76,7 @@ function validateForm() {
 
     //pincode Validation
     if (pincode === "") {
-        document.getElementById('error_pincode').innerHTML = "Please Enter pincode";
+        document.getElementById('error_pincode').innerHTML = "Please Enter Pincode";
         return false;
     }
     else {
@@ -85,7 +85,7 @@ function validateForm() {
 
     //phone Validation
     if (phone === "") {
-        document.getElementById('error_phone').innerHTML = "Please Enter phone Number";
+        document.getElementById('error_phone').innerHTML = "Please Enter Phone Number";
         return false;
     }
     else {
