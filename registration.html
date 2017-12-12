@@ -22,7 +22,6 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-
 <body>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -41,7 +40,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                        <a class="navbar-brand" href="#"><img class="img-responsive" src="img/Logo.png" alt="Logo"></a>
+                        <!--<a class="navbar-brand" href="#"><img class="img-responsive" src="img/Logo.png" alt="Logo"></a>-->
                     </div>
                     <!-- Collection of nav links and other content for toggling -->
                     <div class="container">
@@ -50,12 +49,12 @@
                             <ul class="nav navbar-nav navbar-left">
                                 <li><a href="index.html">Home</a></li>
                                 <!--                                <li><a href="members.html">Charity</a></li>-->
-                                <li><a href="gallery.html">Gallery</a></li>
+                                <li><a href="members.html">Members</a></li>
 
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
 
-                                <li><a href="members.html">Board Members</a></li>
+                                <li><a href="boardmembers.html">Board Members</a></li>
                                 <li><a href="convention.html">Convention 2018</a></li>
 
                             </ul>
@@ -81,55 +80,56 @@
                         <div class="panel-heading">Enter Your Details Here
                         </div>
                         <div class="panel-body">
-                            <form name="myform">
+                            <form name="myform" onsubmit="return validateForm()">
                                 <div class="form-group">
                                     <label for="myName">Name <sup>*</sup></label>
-                                    <input required id="myName" name="myName" class="form-control" type="text" data-validation="required">
-                                    <span id="error_name" class="text-danger"></span>
+                                    <input  id="myName" name="myName" class="form-control" type="text" data-validation="required">
+                                    <span id="error_name" class="text-danger" role="alert"></span>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="member">Member of Giant Groups of <sup>*</sup></label>
-                                        <input required id="member" name="member" class="form-control" type="text" data-validation="required">
+                                        <input id="member" name="member" class="form-control" type="text" data-validation="required">
                                         <span id="error_member" class="text-danger"></span>
                                     </div>
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="federation">Federation <sup>*</sup></label>
-                                        <input required id="federation" name="federation" class="form-control" type="text" data-validation="required">
+                                        <input id="federation" name="federation" class="form-control" type="text" data-validation="required">
                                         <span id="error_federation" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="disc">Address</label>
-                                    <textarea name="address" class="form-control textarea" rows="5"></textarea>
+                                    <textarea id="address" name="address" class="form-control textarea" rows="5"></textarea>
+                                    <span id="error_address" class="text-danger"></span>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="city">City <sup>*</sup></label>
-                                        <input required type="text" id="city" name="city" class="form-control">
+                                        <input type="text" id="city" name="city" class="form-control">
                                         <span id="error_city" class="text-danger"></span>
                                     </div>
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="state">State <sup>*</sup></label>
-                                        <input required type="text" id="state" name="state" class="form-control">
+                                        <input type="text" id="state" name="state" class="form-control">
                                         <span id="error_state" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="pincode">Pincode <sup>*</sup></label>
-                                        <input required type="text" id="pincode" name="pincode" class="form-control">
+                                        <input type="text" id="pincode" name="pincode" class="form-control">
                                         <span id="error_pincode" class="text-danger"></span>
                                     </div>
                                     <div class="col-sm-6 col-xs-12">
                                         <label for="phone">Phone Number <sup>*</sup></label>
-                                        <input required type="text" id="phone" name="phone" class="form-control">
+                                        <input type="text" id="phone" name="phone" class="form-control">
                                         <span id="error_phone" class="text-danger"></span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email <sup>*</sup></label>
-                                    <input required type="text" id="email" name="email" class="form-control">
+                                    <input type="text" id="email" name="email" class="form-control">
                                     <span id="error_email" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
@@ -140,41 +140,42 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3 col-xs-12">
-                                            <label for="men">Men <sup>*</sup></label>
-                                            <input required type="number" id="men" name="men" class="form-control" min="0">
+                                            <label for="men">Men</label>
+                                            <input type="number" id="men" name="men" class="form-control" min="0">
                                             <span id="error_men" class="text-danger"></span>
                                         </div>
                                         <div class="col-sm-3 col-xs-12">
-                                            <label for="women">Women <sup>*</sup></label>
-                                            <input required type="number" id="women" name="women" class="form-control" min="0">
+                                            <label for="women">Women</label>
+                                            <input type="number" id="women" name="women" class="form-control" min="0">
                                             <span id="error_women" class="text-danger"></span>
                                         </div>
                                         <div class="col-sm-3 col-xs-12">
-                                            <label for="children">Children <sup>*</sup></label>
-                                            <input required type="number" id="children" name="children" class="form-control" min="0">
+                                            <label for="children">Children</label>
+                                            <input type="number" id="children" name="children" class="form-control" min="0">
                                             <span id="error_children" class="text-danger"></span>
                                         </div>
                                         <div class="col-sm-3 col-xs-12">
-                                            <label for="guest">Guest <sup>*</sup></label>
-                                            <input required type="number" id="guest" name="guest" class="form-control" min="0">
+                                            <label for="guest">Guest</label>
+                                            <input type="number" id="guest" name="guest" class="form-control" min="0">
                                             <span id="error_guest" class="text-danger"></span>
                                         </div>
                                         <div class="col-sm-12 col-xs-12" style="margin: 20px 0 20px 0">
-                                        	<div class="row">
-                                        		<div class="col-sm-2" style="font-weight: bold;">
-                                        			Enroll for Trip
-                                        		</div>
-												<div class="col-sm-2">
-													<label class="radio-inline" style="font-weight: bold;">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="font-weight: bold;">
+                                                    Enroll for Trip
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label class="radio-inline" style="font-weight: bold;">
                                             			<input type="radio" value="yes" name="enroll_trip">Yes
                                             		</label>
-												</div>
-                                        		<div class="col-sm-2">
-                                        			<label class="radio-inline" style="font-weight: bold;">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label class="radio-inline" style="font-weight: bold;">
                                             			<input type="radio" value="no" name="enroll_trip">No
                                             		</label>
-                                        		</div>                                        
-                                        	</div>
+                                                </div>
+                                            </div>
+                                            <span id="error_enroll_trip" class="text-danger"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +192,7 @@
         <footer>
             <div class="footer-wrap">
                 <div class="container">
-                    <p>&copy; Copyright 2017 - 2018  &nbsp; Giants groups of Madurai</p>
+                    <p>&copy; Copyright 2017 - 2018 &nbsp; Giants groups of Madurai</p>
                 </div>
             </div>
         </footer>
@@ -199,18 +200,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-
     </script>
 
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/lightbox.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/registration.js"></script>
     <script>
         lightbox.option({
             'resizeDuration': 200,
             'wrapAround': true
         })
-
     </script>
 
 </body>
