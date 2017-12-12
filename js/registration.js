@@ -1,7 +1,8 @@
 function validateForm() {
+    var transationId = document.forms["myform"]["transactionId"].value;
     var name = document.forms["myform"]["myName"].value;
-    var isMember = document.forms["myform"]["member"].value;
-    var federation = document.forms["myform"]["federation"].value;
+    // var isMember = document.forms["myform"]["member"].value;
+    // var federation = document.forms["myform"]["federation"].value;
     var address = document.forms["myform"]["address"].value;
     var city = document.forms["myform"]["city"].value;
     var state = document.forms["myform"]["state"].value;
@@ -9,6 +10,15 @@ function validateForm() {
     var phone = document.forms["myform"]["phone"].value;
     var email = document.forms["myform"]["email"].value;
     var enroll_trip = document.forms["myform"]["enroll_trip"].value;
+
+    //TransactionId Validation
+    if (transationId === "") {
+        document.getElementById('error_transationId').innerHTML = "Please Enter a transationId";
+        return false;
+    }
+    else {
+        document.getElementById('error_transationId').innerHTML = "";
+    }
 
     //Name Validation
     if (name === "") {
@@ -20,22 +30,22 @@ function validateForm() {
     }
 
     //IsMember Validation
-    if (isMember === "") {
-        document.getElementById('error_member').innerHTML = "Please Enter the Member Group";
-        return false;
-    }
-    else {
-        document.getElementById('error_member').innerHTML = "";
-    }
+    // if (isMember === "") {
+    //     document.getElementById('error_member').innerHTML = "Please Enter the Member Group";
+    //     return false;
+    // }
+    // else {
+    //     document.getElementById('error_member').innerHTML = "";
+    // }
 
     //federation Validation
-    if (federation === "") {
-        document.getElementById('error_federation').innerHTML = "Please Enter any federation";
-        return false;
-    }
-    else {
-        document.getElementById('error_federation').innerHTML = "";
-    }
+    // if (federation === "") {
+    //     document.getElementById('error_federation').innerHTML = "Please Enter any federation";
+    //     return false;
+    // }
+    // else {
+    //     document.getElementById('error_federation').innerHTML = "";
+    // }
 
     //address Validation
     if (address === "") {
@@ -64,39 +74,43 @@ function validateForm() {
         document.getElementById('error_state').innerHTML = "";
     }
 
-    //state Validation
-    if (state === "") {
-        document.getElementById('error_state').innerHTML = "Please Enter state";
+    //pincode Validation
+    if (pincode === "") {
+        document.getElementById('error_pincode').innerHTML = "Please Enter pincode";
         return false;
     }
     else {
-        document.getElementById('error_state').innerHTML = "";
+        document.getElementById('error_pincode').innerHTML = "";
     }
 
-    //state Validation
-    if (state === "") {
-        document.getElementById('error_state').innerHTML = "Please Enter state";
+    //phone Validation
+    if (phone === "") {
+        document.getElementById('error_phone').innerHTML = "Please Enter phone Number";
         return false;
     }
     else {
-        document.getElementById('error_state').innerHTML = "";
+        document.getElementById('error_phone').innerHTML = "";
     }
 
-    //state Validation
-    if (state === "") {
-        document.getElementById('error_state').innerHTML = "Please Enter state";
+    //email Validation
+    if (email === "") {
+        document.getElementById('error_email').innerHTML = "Please Enter Email Id";
+        return false;
+    }
+    else if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        document.getElementById('error_email').innerHTML = "Please Enter a valid Email Id";
         return false;
     }
     else {
-        document.getElementById('error_state').innerHTML = "";
+        document.getElementById('error_email').innerHTML = "";
     }
 
-    //state Validation
-    if (state === "") {
-        document.getElementById('error_state').innerHTML = "Please Enter state";
+    //enroll trip Validation
+    if (enroll_trip === "") {
+        document.getElementById('error_enroll_trip').innerHTML = "Please select one option";
         return false;
     }
     else {
-        document.getElementById('error_state').innerHTML = "";
+        document.getElementById('error_enroll_trip').innerHTML = "";
     }
 }
