@@ -1,10 +1,19 @@
 <?php
+ include '../../db.php';
+  // $con = mysqli_connect("localhost","root","","madurai_giants_db");
+  // if (mysqli_connect_errno())
+  //   {
+  //     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  //   }
 
-  $con = mysqli_connect("localhost","root","","madurai_giants_db");
-  if (mysqli_connect_errno())
-    {
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    }
+  $record_count_qry = mysqli_query($con,"SELECT * FROM tbl_member_details");
+  $record_count = mysqli_num_rows($record_count_qry);
+  $registration_id_suffix = (int)$record_count + 1;
+  // echo $registration_id_suffix."<br/>";
+  $registration_id_string = "MG".$registration_id_suffix;
+  // echo $registration_id_string."<br/>";
+  $registration_id = md5($registration_id_string);
+  // echo $registration_id;
 
   $transaction_id = $_POST['transactionId'];
   $name = $_POST['myName'];
@@ -22,13 +31,13 @@
   $guest_count = $_POST['guest'];
   $opt_trip = $_POST['enroll_trip'];
 
-  $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$transaction_id','$name','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip') ");
-                                                                                                                                            
+  $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$registration_id' ,'$transaction_id','$name','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip') ");
+
   echo $execute_query;
 
   if($execute_query){
     $subject = 'Registration | Giants group of Madurai';
-    $mailBody = 'Hi'.$name.', Thanks for registration';
+    $mailBody = 'Hi'.$name.', Thanks for registration <br/><a href="/track-status.php?id='.$registration_id.'">Click here</a> to know your registration status';
     $headers = "From: no-reply@maduraigiants.org";
     mail($email, $subject , $mailBody, $headers);
     
