@@ -76,7 +76,7 @@
                 </div>
                 <div class="mem-main-wrap reg-main">
                     <div class="panel panel-primary reg-panel">
-                        <div class="panel-heading text-center">Register Here | Giants Group of Madurai
+                        <div class="panel-heading text-center">Register Here | GIANTS group of Madurai
                         </div>
                         <div class="note">
                             <h5><strong>Note: Kindly register after payment.
@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="disc">Address</label>
+                                    <label for="disc">Address <sup>*</sup></label>
                                     <textarea id="address" name="address" class="form-control textarea" rows="5"></textarea>
                                     <span id="error_address" class="text-danger"></span>
                                 </div>
@@ -204,7 +204,7 @@
         <footer>
             <div class="footer-wrap">
                 <div class="container">
-                    <p>&copy; Copyright 2017 - 2018 &nbsp; Giants groups of Madurai</p>
+                    <p>&copy; Copyright 2017 - 2018 &nbsp; GIANTS group of Madurai</p>
                 </div>
             </div>
         </footer>
@@ -223,6 +223,14 @@
             'resizeDuration': 200,
             'wrapAround': true
         })
+
+        var key = window.location.search;
+
+        if(key.split('?register=')[1] == 'success') {
+            window.alert('Registered! You will recieve mail shortly.');
+            window.location.href='index.html';
+        }
+
     </script>
 
 </body>
