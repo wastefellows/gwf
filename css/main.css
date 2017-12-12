@@ -57,6 +57,7 @@ body {
 .index-banner img {
     margin: 0 auto;
     max-width: 100%;
+    height:270px;
 }
 
 .index-banner:after {
@@ -67,7 +68,7 @@ body {
     background: url("../img/1.png") no-repeat center center;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -1px;
+    bottom: -2px;
 }
 
 .logo-banner {
@@ -86,7 +87,7 @@ body {
 
 .main-wrap .img-main-wrap {
     text-align: center;
-    width: 50%;
+    width: 40%;
     margin: 25px auto;
 
 }
