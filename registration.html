@@ -1,0 +1,218 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Registration Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="gwf">
+        <header>
+            <div class="header">
+
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                        <a class="navbar-brand" href="#"><img class="img-responsive" src="img/Logo.png" alt="Logo"></a>
+                    </div>
+                    <!-- Collection of nav links and other content for toggling -->
+                    <div class="container">
+                        <div id="navbarCollapse" class="collapse navbar-collapse">
+
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="index.html">Home</a></li>
+                                <!--                                <li><a href="members.html">Charity</a></li>-->
+                                <li><a href="gallery.html">Gallery</a></li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+
+                                <li><a href="members.html">Board Members</a></li>
+                                <li><a href="convention.html">Convention 2018</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </header>
+        <section>
+            <div class="index-banner">
+                <img src="img/Gopuram.png" />
+                <div class="logo-banner">
+                    <img src="img/Logo.png" />
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="mem-main-wrap">
+                    <h2 class="text-center">Registration Form</h2>
+                    <div class="panel panel-primary reg-panel">
+                        <div class="panel-heading">Enter Your Details Here
+                        </div>
+                        <div class="panel-body">
+                            <form name="myform">
+                                <div class="form-group">
+                                    <label for="myName">Name <sup>*</sup></label>
+                                    <input required id="myName" name="myName" class="form-control" type="text" data-validation="required">
+                                    <span id="error_name" class="text-danger"></span>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="member">Member of Giant Groups of <sup>*</sup></label>
+                                        <input required id="member" name="member" class="form-control" type="text" data-validation="required">
+                                        <span id="error_member" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="federation">Federation <sup>*</sup></label>
+                                        <input required id="federation" name="federation" class="form-control" type="text" data-validation="required">
+                                        <span id="error_federation" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="disc">Address</label>
+                                    <textarea name="address" class="form-control textarea" rows="5"></textarea>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="city">City <sup>*</sup></label>
+                                        <input required type="text" id="city" name="city" class="form-control">
+                                        <span id="error_city" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="state">State <sup>*</sup></label>
+                                        <input required type="text" id="state" name="state" class="form-control">
+                                        <span id="error_state" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="pincode">Pincode <sup>*</sup></label>
+                                        <input required type="text" id="pincode" name="pincode" class="form-control">
+                                        <span id="error_pincode" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <label for="phone">Phone Number <sup>*</sup></label>
+                                        <input required type="text" id="phone" name="phone" class="form-control">
+                                        <span id="error_phone" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email <sup>*</sup></label>
+                                    <input required type="text" id="email" name="email" class="form-control">
+                                    <span id="error_email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <label>No. of accompanying Person:</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <label for="men">Men <sup>*</sup></label>
+                                            <input required type="number" id="men" name="men" class="form-control" min="0">
+                                            <span id="error_men" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-12">
+                                            <label for="women">Women <sup>*</sup></label>
+                                            <input required type="number" id="women" name="women" class="form-control" min="0">
+                                            <span id="error_women" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-12">
+                                            <label for="children">Children <sup>*</sup></label>
+                                            <input required type="number" id="children" name="children" class="form-control" min="0">
+                                            <span id="error_children" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-3 col-xs-12">
+                                            <label for="guest">Guest <sup>*</sup></label>
+                                            <input required type="number" id="guest" name="guest" class="form-control" min="0">
+                                            <span id="error_guest" class="text-danger"></span>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12" style="margin: 20px 0 20px 0">
+                                        	<div class="row">
+                                        		<div class="col-sm-2" style="font-weight: bold;">
+                                        			Enroll for Trip
+                                        		</div>
+												<div class="col-sm-2">
+													<label class="radio-inline" style="font-weight: bold;">
+                                            			<input type="radio" value="yes" name="enroll_trip">Yes
+                                            		</label>
+												</div>
+                                        		<div class="col-sm-2">
+                                        			<label class="radio-inline" style="font-weight: bold;">
+                                            			<input type="radio" value="no" name="enroll_trip">No
+                                            		</label>
+                                        		</div>                                        
+                                        	</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button id="submit" type="submit" value="submit" class="btn btn-primary center">Submit</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-wrap">
+                <div class="container">
+                    <p>&copy; Copyright 2017 - 2018  &nbsp; Giants groups of Madurai</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+
+    </script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/lightbox.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+
+    </script>
+
+</body>
+
+</html>
