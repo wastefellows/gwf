@@ -22,28 +22,17 @@
   $guest_count = $_POST['guest'];
   $opt_trip = $_POST['enroll_trip'];
 
-  //echo 'transaction_id:'.$transaction_id.'<br />';
-  //echo 'name:'.$name.'<br />';
-  //echo 'giant_group:'.$giant_group.'<br />';
-  //echo 'federation:'.$federation.'<br />';
-  //echo 'address:'.$address.'<br />';
-  //echo 'city:'.$city.'<br />';
-  //echo 'state:'.$state.'<br />';
-  //echo 'pincode:'.$pincode.'<br />';
-  //echo 'email:'.$email.'<br />';
-  //echo 'phone:'.$phone.'<br />';
-  //echo 'men_count:'.$men_count.'<br />';
-  //echo 'women_count:'.$women_count.'<br />';
-  //echo 'children_count:'.$children_count.'<br />';
-  //echo 'guest_count:'.$guest_count.'<br />';
-  //echo 'opt_trip:'.$opt_trip.'<br />';
-
   $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$transaction_id','$name','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip') ");
                                                                                                                                             
   echo $execute_query;
 
   if($execute_query){
-    header("location:../../success.html");
+    $subject = 'Registration | Giants group of Madurai';
+    $mailBody = 'Hi'.$name.', Thanks for registration';
+    $headers = "From: no-reply@maduraigiants.org";
+    mail($email, $subject , $mailBody, $headers);
+    
+    header("location:../../registration.html?register=success");
   }
 
   mysqli_close($con);
