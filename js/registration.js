@@ -21,6 +21,15 @@ function validateForm() {
         document.getElementById('error_transationId').innerHTML = "";
     }
 
+    //payment validation
+    if (payment === "") {
+        document.getElementById('error_payment').innerHTML = "Please select one option";
+        return false;
+    }
+    else {
+        document.getElementById('error_payment').innerHTML = "";
+    }
+
     //Name Validation
     if (name === "") {
         document.getElementById('error_name').innerHTML = "Please Enter a Name";
@@ -113,14 +122,5 @@ function validateForm() {
     }
     else {
         document.getElementById('error_enroll_trip').innerHTML = "";
-    }
-
-    //payment validation
-    if (payment === "") {
-        document.getElementById('error_payment').innerHTML = "Please select one option";
-        return false;
-    }
-    else {
-        document.getElementById('error_payment').innerHTML = "";
     }
 }
