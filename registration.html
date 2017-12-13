@@ -92,11 +92,29 @@
                                         <span id="error_transationId" class="text-danger"></span>
                                         <small class="trans-note"><strong>Please enter your payment transaction id.</strong></small>
                                     </div>
-                                    <div class="col-sm-6 col-xs-12">
-                                        <label for="myName">Name <sup>*</sup></label>
-                                        <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
-                                        <span id="error_name" class="text-danger" role="alert"></span>
-                                    </div>
+                                    <div class="col-sm-6 col-xs-6" style="margin-top: 30px">
+                                            <div class="row">
+                                                <div class="col-sm-4" style="font-weight: bold;">
+                                                    Payment Mode
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline" style="font-weight: bold;">
+                                                        <input type="radio" value="0" name="enroll_trip">Online
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline" style="font-weight: bold;">
+                                                        <input type="radio" value="1" name="enroll_trip">Cash
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <span id="error_enroll_trip" class="text-danger"></span>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="myName">Name <sup>*</sup></label>
+                                    <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
+                                    <span id="error_name" class="text-danger" role="alert"></span>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
@@ -188,18 +206,6 @@
                                                 </div>
                                             </div>
                                             <span id="error_enroll_trip" class="text-danger"></span>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-12" style="margin: 20px 0 20px 0">
-                                            <div class="row">
-                                                <div class="col-sm-2" style="font-weight: bold;">
-                                                    Paid through Cash
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <label class="checkbox-inline" style="font-weight: bold;">
-                                                        <input type="checkbox" value="0" name="byCash">Yes
-                                                    </label>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
