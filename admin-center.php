@@ -132,7 +132,7 @@
                         echo "
                         <div role='tabpanel' class='tab-pane fade' id='profile'>
                         <table class='table table-striped'> 
-                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Transaction ID</th> <th> Status </th> </tr> </thead>
+                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Payment Mode </th> <th> Transaction ID</th> <th> Status </th> </tr> </thead>
                         <tbody>
                         ";
                         if(mysqli_num_rows($select_query)==0){
@@ -142,10 +142,12 @@
                         }
                         else{
                             while($fetch_query = mysqli_fetch_array($select_query)){
+                            $byCash = $fetch_query['by_cash'] == 1 ? 'Cash' : 'Online';
                             echo "
                             <tr> 
                             <td> ".$fetch_query['name']." </td> 
                             <td> ".$fetch_query['phone']." </td>
+                            <td> ".$byCash." </td>
                             <td> ".$fetch_query['transaction_id']." </td>
                             <td> Approved </td>
                             </tr>
