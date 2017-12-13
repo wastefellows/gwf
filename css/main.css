@@ -183,7 +183,11 @@ body {
 
 .company {
     color: darkgreen;
-    font-weight: bold;
+    font-weight: 700;
+}
+
+.convention-member {
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -288,6 +292,9 @@ border-top:1px solid #555;
     }
     .member_blk:nth-child(4n + 1) {
         margin-left: 0;
+    }
+    .convention-member {
+        width: 50%;
     }
 }
 
