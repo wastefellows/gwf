@@ -27,11 +27,7 @@
   $children_count = $_POST['children'];
   $guest_count = $_POST['guest'];
   $opt_trip = $_POST['enroll_trip'];
-  if(isset($_POST['byCash'])){
-    $by_cash = '1';
-  } else {
-    $by_cash='0';
-  }
+  $by_cash = $_POST['byCash'];
   
   $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$registration_id' ,'$transaction_id','$name','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip','0','$by_cash') ");
 
