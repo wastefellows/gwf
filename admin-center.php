@@ -142,7 +142,6 @@
                         }
                         else{
                             while($fetch_query = mysqli_fetch_array($select_query)){
-                            $payment_status_string = $fetch_query['payment_status']== 0 ? 'Pending':'Approved';
                             echo "
                             <tr> 
                             <td> ".$fetch_query['name']." </td> 
@@ -205,7 +204,6 @@
         }
 
         function logout() {
-            console.log(document.cookie)
             document.cookie = 'session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
             window.location.reload();
         }
