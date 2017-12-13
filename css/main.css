@@ -181,6 +181,10 @@ body {
 	color: #EE151F;
 }
 
+.company {
+    color: darkgreen;
+    font-weight: bold;
+}
 
 /* ==========================================================================
                              Gallery
