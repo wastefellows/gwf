@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Registration Form</title>
+    <title>Track Status</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -76,7 +76,37 @@
         <section>
             <div class="container">
                 <div class="mem-main-wrap">
-                    
+                    <?php
+                    include 'api/db.php';
+                    error_reporting(0);
+                    $registration_id = $_REQUEST['id'];
+                    $select_query = mysqli_query($con,"SELECT * FROM tbl_member_details WHERE registration_id='$registration_id'");
+                    while($fetch_query = mysqli_fetch_array($select_query)){
+                       $payment_status_string = $fetch_query['payment_status']== 0 ? 'Pending':'Approved';
+                       echo "
+                       <div class='row'> 
+                        <div class='col-md-6'> Name </div>
+                        <div class='col-md-6'> ".$fetch_query['name']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Transaction ID </div>
+                        <div class='col-md-6'> ".$fetch_query['transaction_id']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Email Address </div>
+                        <div class='col-md-6'> ".$fetch_query['email']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Phone </div>
+                        <div class='col-md-6'> ".$fetch_query['phone']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Registration Status </div>
+                        <div class='col-md-6'> ".$payment_status_string." </div>
+                       </div>
+                       ";
+                    }
+                    ?>
                 </div>
             </div>
         </section>

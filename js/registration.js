@@ -13,7 +13,7 @@ function validateForm() {
 
     //TransactionId Validation
     if (transationId === "") {
-        document.getElementById('error_transationId').innerHTML = "Please Enter a Transation Id<br>";
+        document.getElementById('error_transationId').innerHTML = "Please Enter a Transation ID / Receipt Number<br>";
         return false;
     }
     else {

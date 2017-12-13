@@ -87,7 +87,7 @@
                             <form name="myform" method="post" action="api/registration/insert_details.php" onsubmit="return validateForm()">
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">
-                                        <label for="transactionId">Transaction ID <sup>*</sup></label>
+                                        <label for="transactionId">Transaction ID / Receipt Number <sup>*</sup></label>
                                         <input id="transactionId" name="transactionId" class="form-control" type="text" data-validation="required">
                                         <span id="error_transationId" class="text-danger"></span>
                                         <small class="trans-note"><strong>Please enter your payment transaction id.</strong></small>
@@ -189,6 +189,18 @@
                                             </div>
                                             <span id="error_enroll_trip" class="text-danger"></span>
                                         </div>
+                                        <div class="col-sm-12 col-xs-12" style="margin: 20px 0 20px 0">
+                                            <div class="row">
+                                                <div class="col-sm-2" style="font-weight: bold;">
+                                                    Paid through Cash
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label class="radio-inline" style="font-weight: bold;">
+                                                        <input type="checkbox" value="0" name="byCash">Yes
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -227,8 +239,9 @@
         var key = window.location.search;
 
         if(key.split('?register=')[1] == 'success') {
-            window.alert('Registered! You will recieve mail shortly.');
-            window.location.href='index.html';
+            var response = window.confirm('Registered! You will recieve mail shortly.');
+            if (response)
+                window.location.href='index.html';
         }
 
     </script>
