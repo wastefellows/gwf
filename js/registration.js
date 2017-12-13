@@ -10,6 +10,7 @@ function validateForm() {
     var phone = document.forms["myform"]["phone"].value;
     var email = document.forms["myform"]["email"].value;
     var enroll_trip = document.forms["myform"]["enroll_trip"].value;
+    var payment = document.forms["myform"]["byCash"].value;
 
     //TransactionId Validation
     if (transationId === "") {
@@ -112,5 +113,14 @@ function validateForm() {
     }
     else {
         document.getElementById('error_enroll_trip').innerHTML = "";
+    }
+
+    //payment validation
+    if (payment === "") {
+        document.getElementById('error_payment').innerHTML = "Please select one option";
+        return false;
+    }
+    else {
+        document.getElementById('error_payment').innerHTML = "";
     }
 }
