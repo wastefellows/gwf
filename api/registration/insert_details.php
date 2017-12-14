@@ -35,13 +35,14 @@
   echo $execute_query;
   if($execute_query){
     $subject = 'Registration | Giants group of Madurai';
-    $mailBody = 'Hi '.$name.', Welcome to GIANTS GROUP OF MADURAI. Thank you for joining hands with us. <br/><br/> <a href="http://www.maduraigiants.org/beta/track-status.php?id='.$registration_id.'">Click here</a> to know your registration status. <br/><br/><br/> Registration status will be showing as Pending. Your registration status will be <em> Approved </em> once we approve your payment. You can check your status using the same link for checking status. <br/> 
-    Thanks,
-    GIANTS GROUP OF MADURAI TEAM';
+    $mailBody = 'Hi '.$name.', <br/> Welcome to GIANTS GROUP OF MADURAI. Thank you for joining hands with us. <br/><br/> <a href="http://www.maduraigiants.org/track-status.php?id='.$registration_id.'">Click here</a> to know your registration status. <br/><br/><br/> Registration status will be showing as Pending. Your registration status will be <em> Approved </em> once we approve your payment.<br/> 
+    Note: You can check your registration status using the same link. <br/> <br/> 
+    Thanks,<br/>
+    Team - GIANTS GROUP OF MADURAI TEAM';
     $headers = "From: no-reply@maduraigiants.org";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-    // mail($email, $subject , $mailBody, $headers);
+    mail($email, $subject , $mailBody, $headers);
     header("location:../../registration.html?register=success");
   } else {
     echo mysqli_error($con);
