@@ -385,6 +385,13 @@ border-top:1px solid #555;
         font-size: 14px;
         padding: 10px 10px;
     }
+    
+    .bnk_logo {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        padding: 20px 0px;
+    }
 
 }
 /* ==========================================================================
@@ -430,4 +437,8 @@ sup {
 
 .reg-main {
     margin-bottom: 20px;
+}
+
+.bnk_logo{
+    width: 80px;
 }

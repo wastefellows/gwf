@@ -1,5 +1,6 @@
 function validateForm() {
     var transationId = document.forms["myform"]["transactionId"].value;
+    var amount = document.forms["myform"]["amount"].value;
     var name = document.forms["myform"]["myName"].value;
     // var isMember = document.forms["myform"]["member"].value;
     // var federation = document.forms["myform"]["federation"].value;
@@ -19,6 +20,15 @@ function validateForm() {
     }
     else {
         document.getElementById('error_transationId').innerHTML = "";
+    }
+
+    //Amount Paid Validation
+    if (amount === "") {
+        document.getElementById('error_amount').innerHTML = "Please Enter an Amount";
+        return false;
+    }
+    else {
+        document.getElementById('error_amount').innerHTML = "";
     }
 
     //payment validation

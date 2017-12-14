@@ -69,7 +69,9 @@
             <div class="container">
                 <div class="jumbotron payment-details">
                     <h3>Bank Account Details</h3><hr>
-                    <p>SB Account Name: Giants Group of Madurai, Tamilnadu Mercantile Bank.</p>
+                    <p>Bank Name: Tamilnadu Mercantile Bank &nbsp; <img class="bnk_logo" src="img/TMB_new_logo.png"><p>
+                    <p>Account Name: Giants Group of Madurai</p>
+                    <p>Account Type: Savings Account</p>
                     <p>IFS Code: TMBL0000093</p>
                     <p>Account No: 093100050300749</p>
                     <p>Branch Name: Simakkal Branch, Madurai</p>
@@ -86,13 +88,18 @@
                         <div class="panel-body">
                             <form name="myform" method="post" action="api/registration/insert_details.php" onsubmit="return validateForm()">
                                 <div class="row form-group">
-                                    <div class="col-sm-6 col-xs-12">
+                                    <div class="col-sm-4 col-xs-12">
                                         <label for="transactionId">Transaction ID / Receipt Number <sup>*</sup></label>
                                         <input id="transactionId" name="transactionId" class="form-control" type="text" data-validation="required">
                                         <span id="error_transationId" class="text-danger"></span>
                                         <small class="trans-note"><strong>Please enter your payment transaction id.</strong></small>
                                     </div>
-                                    <div class="col-sm-6 col-xs-6" style="margin-top: 30px">
+                                    <div class="col-sm-4 col-xs-12">
+                                        <label for="amount">Amount Paid <sup>*</sup></label>
+                                        <input id="amount" name="amount" class="form-control" type="number" data-validation="required">
+                                        <span id="error_amount" class="text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-6" style="margin-top: 30px">
                                             <div class="row">
                                                 <div class="col-sm-4" style="font-weight: bold;">
                                                     Payment Mode
@@ -192,7 +199,7 @@
                                         <div class="col-sm-12 col-xs-12" style="margin: 20px 0 20px 0">
                                             <div class="row">
                                                 <div class="col-sm-2" style="font-weight: bold;">
-                                                    Enroll for Trip
+                                                    Enroll for Rameswaram Trip
                                                 </div>
                                                 <div class="col-sm-2">
                                                     <label class="radio-inline" style="font-weight: bold;">

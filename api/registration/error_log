@@ -1,0 +1,6 @@
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/sociuz/public_html/maduraigiants.org/beta/api/db.php on line 2
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/sociuz/public_html/maduraigiants.org/beta/api/registration/insert_details.php on line 9
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/sociuz/public_html/maduraigiants.org/beta/api/registration/insert_details.php on line 10
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/sociuz/public_html/maduraigiants.org/beta/api/registration/insert_details.php on line 32
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_error() expects parameter 1 to be mysqli, boolean given in /home/sociuz/public_html/maduraigiants.org/beta/api/registration/insert_details.php on line 43
+[14-Dec-2017 04:00:24 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, boolean given in /home/sociuz/public_html/maduraigiants.org/beta/api/registration/insert_details.php on line 46
