@@ -100,12 +100,12 @@
                         echo "
                         <div role='tabpanel' class='tab-pane active' id='home'>
                         <table class='table table-striped'> 
-                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Payment Mode </th> <th> Transaction ID</th> <th> Action </th> </tr> </thead>
+                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Payment Mode </th> <th> Amount Paid </th> <th> Transaction ID</th> <th> Action </th> </tr> </thead>
                         <tbody>
                         ";
                         if(mysqli_num_rows($select_query)==0){
                             echo "
-                            <tr> <td class='text-center' colspan='4'> No records found </td> </tr>
+                            <tr> <td class='text-center' colspan='6'> No records found </td> </tr>
                             ";
                         }
                         else{
@@ -117,6 +117,7 @@
                             <td> ".$fetch_query['name']." </td> 
                             <td> ".$fetch_query['phone']." </td>
                             <td> ".$byCash." </td>
+                            <td> ".$fetch_query['amount']." </td>
                             <td> ".$fetch_query['transaction_id']." </td>
                             <td> <button class='btn btn-sm btn-success' onclick=askConfirm('". $fetch_query['transaction_id']."','". $fetch_query['registration_id']."')>Approve</button></td>
                             </tr>
@@ -132,12 +133,12 @@
                         echo "
                         <div role='tabpanel' class='tab-pane fade' id='profile'>
                         <table class='table table-striped'> 
-                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Payment Mode </th> <th> Transaction ID</th> <th> Status </th> </tr> </thead>
+                        <thead> <tr> <th> Name </th> <th> Phone </th> <th> Payment Mode </th> <th> Amount Paid </th> <th> Transaction ID</th> <th> Status </th> </tr> </thead>
                         <tbody>
                         ";
                         if(mysqli_num_rows($select_query)==0){
                             echo "
-                            <tr> <td class='text-center' colspan='4'> No records found </td> </tr>
+                            <tr> <td class='text-center' colspan='6'> No records found </td> </tr>
                             ";
                         }
                         else{
@@ -148,6 +149,7 @@
                             <td> ".$fetch_query['name']." </td> 
                             <td> ".$fetch_query['phone']." </td>
                             <td> ".$byCash." </td>
+                            <td> ".$fetch_query['amount']." </td>
                             <td> ".$fetch_query['transaction_id']." </td>
                             <td> Approved </td>
                             </tr>
