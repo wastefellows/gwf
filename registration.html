@@ -81,25 +81,20 @@
                         <div class="panel-heading text-center">Register Here | GIANTS group of Madurai
                         </div>
                         <div class="note">
-                            <h5><strong>Note: Kindly register after payment.
+                            <h5><strong>Note: Kindly register after getting Transaction id/Receipt Number on your payment.
                             Confirmation on your payment will be sent to you through mail.</strong>
                             </h5>
                         </div>
                         <div class="panel-body">
                             <form name="myform" method="post" action="api/registration/insert_details.php" onsubmit="return validateForm()">
                                 <div class="row form-group">
-                                    <div class="col-sm-4 col-xs-12">
+                                    <div class="col-sm-6 col-xs-12">
                                         <label for="transactionId">Transaction ID / Receipt Number <sup>*</sup></label>
                                         <input id="transactionId" name="transactionId" class="form-control" type="text" data-validation="required">
                                         <span id="error_transationId" class="text-danger"></span>
-                                        <small class="trans-note"><strong>Please enter your payment transaction id.</strong></small>
+                                        <small class="trans-note"><strong>Please enter your payment transaction id/receipt number.</strong></small>
                                     </div>
-                                    <div class="col-sm-4 col-xs-12">
-                                        <label for="amount">Amount Paid <sup>*</sup></label>
-                                        <input id="amount" name="amount" class="form-control" type="number" data-validation="required">
-                                        <span id="error_amount" class="text-danger"></span>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-6" style="margin-top: 30px">
+                                    <div class="col-sm-6 col-xs-6" style="margin-top: 30px">
                                             <div class="row">
                                                 <div class="col-sm-4" style="font-weight: bold;">
                                                     Payment Mode
@@ -118,10 +113,42 @@
                                             <span id="error_payment" class="text-danger"></span>
                                         </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="myName">Name <sup>*</sup></label>
-                                    <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
-                                    <span id="error_name" class="text-danger" role="alert"></span>
+                                <div class="row form-group">
+                                    <div class="col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-sm-4" style="font-weight: bold;">
+                                                    Person(s)
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline" style="font-weight: bold;">
+                                                        <input type="radio"
+                                                               onclick="handleClick(this)"
+                                                            value="3000" name="amount"
+                                                            checked>Single
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="radio-inline" style="font-weight: bold;">
+                                                        <input type="radio" 
+                                                            onclick="handleClick(this)"
+                                                               value="5000" name="amount">Couple
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <span id="error_amount" class="text-danger"></span>
+                                        </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div id="myNameDiv" class="col-sm-12 col-xs-12">
+                                        <label for="myName">Name <sup>*</sup></label>
+                                        <input id="myName" name="myName" class="form-control" type="text" data-validation="required">
+                                        <span id="error_name" class="text-danger" role="alert"></span>
+                                    </div>
+                                    <div id="cNameDiv" style="display: none" class="col-sm-6 col-xs-12">
+                                        <label for="myName">Couple Name <sup>*</sup></label>
+                                        <input id="cName" name="cName" class="form-control" type="text" data-validation="required">
+                                        <span id="error_cname" class="text-danger" role="alert"></span>
+                                    </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col-sm-6 col-xs-12">

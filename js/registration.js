@@ -2,6 +2,7 @@ function validateForm() {
     var transationId = document.forms["myform"]["transactionId"].value;
     var amount = document.forms["myform"]["amount"].value;
     var name = document.forms["myform"]["myName"].value;
+    var cname = document.forms["myform"]["cName"].value;
     // var isMember = document.forms["myform"]["member"].value;
     // var federation = document.forms["myform"]["federation"].value;
     var address = document.forms["myform"]["address"].value;
@@ -30,6 +31,7 @@ function validateForm() {
     else {
         document.getElementById('error_amount').innerHTML = "";
     }
+    
 
     //payment validation
     if (payment === "") {
@@ -39,7 +41,7 @@ function validateForm() {
     else {
         document.getElementById('error_payment').innerHTML = "";
     }
-
+    
     //Name Validation
     if (name === "") {
         document.getElementById('error_name').innerHTML = "Please Enter a Name";
@@ -49,6 +51,18 @@ function validateForm() {
         document.getElementById('error_name').innerHTML = "";
     }
 
+    //Couple Name Validation
+    if(amount === "5000") {
+        if(cname === "") {
+            document.getElementById('error_cname').innerHTML = "Please Enter Couple Name";
+        } else {
+            document.getElementById('error_cname').innerHTML = "";
+        }
+    } else {
+        document.getElementById('cName').value = "";
+        document.getElementById('error_cname').innerHTML = "";
+    }
+    
     //IsMember Validation
     // if (isMember === "") {
     //     document.getElementById('error_member').innerHTML = "Please Enter the Member Group";
@@ -132,5 +146,18 @@ function validateForm() {
     }
     else {
         document.getElementById('error_enroll_trip').innerHTML = "";
+    }
+}
+
+function handleClick(amount) {
+    if(amount.value === '5000') {
+        document.getElementById('myNameDiv').classList.remove('col-sm-12');
+        document.getElementById('myNameDiv').classList.add('col-sm-6');
+        document.getElementById('cNameDiv').style.display = "block";
+    } else {
+        document.getElementById('cName').value = "";
+        document.getElementById('myNameDiv').classList.add('col-sm-12');
+        document.getElementById('myNameDiv').classList.remove('col-sm-6');
+        document.getElementById('cNameDiv').style.display = "none";
     }
 }

@@ -15,6 +15,7 @@
   $transaction_id = $_POST['transactionId'];
   $amount = $_POST['amount'];
   $name = $_POST['myName'];
+  $cname = $_POST['cName'];
   $giant_group = $_POST['member'];
   $federation = $_POST['federation'];
   $address = $_POST['address'];
@@ -30,7 +31,7 @@
   $opt_trip = $_POST['enroll_trip'];
   $by_cash = $_POST['byCash'];
   
-  $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$registration_id' ,'$transaction_id','$amount','$name','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip','0','$by_cash') ");
+  $execute_query = mysqli_query($con,"INSERT INTO tbl_member_details VALUES(now(),'$registration_id' ,'$transaction_id','$amount','$name','$cname','$giant_group','$federation','$address','$city','$state','$pincode','$email','$phone','$men_count','$women_count','$children_count','$guest_count','$opt_trip','0','$by_cash') ");
 
   echo $execute_query;
   if($execute_query){
@@ -38,8 +39,8 @@
     $mailBody = 'Hi '.$name.', <br/> Welcome to GIANTS GROUP OF MADURAI. Thank you for joining hands with us. <br/><br/> <a href="http://www.maduraigiants.org/track-status.php?id='.$registration_id.'">Click here</a> to know your registration status. <br/><br/><br/> Registration status will be showing as Pending. Your registration status will be <em> Approved </em> once we approve your payment.<br/> 
     Note: You can check your registration status using the same link. <br/> <br/> 
     Thanks,<br/>
-    Team - GIANTS GROUP OF MADURAI TEAM';
-    $headers = "From: no-reply@maduraigiants.org";
+    Team - GIANTS GROUP OF MADURAI';
+    $headers = "From: no-reply@maduraigiants.org\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
     mail($email, $subject , $mailBody, $headers);
