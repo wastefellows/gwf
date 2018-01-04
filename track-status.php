@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>Track Status</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/lightbox.css">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -46,7 +47,7 @@
                     <div class="container">
                         <div id="navbarCollapse" class="collapse navbar-collapse">
 
-                             <ul class="nav navbar-nav navbar-left">
+                            <ul class="nav navbar-nav navbar-left">
                                 <li><a href="index.html">Home</a></li>
                                 <!--                                <li><a href="members.html">Charity</a></li>-->
                                 <li><a href="members.html">Members</a></li>
@@ -73,39 +74,65 @@
             </div>
         </section>
         <section>
-            <div class="main-wrap">
-                <div class="container">
-                    <div class="img-main-wrap">
-                        <img src="img/mainct.png" />
-                    </div>
-                    <div class="main-content">
-                        <p>GIANTS GROUP OF MADURAI is a Voluntary Social Service Organisation affiliated to Giants International, the only international Service Organisation founded in India.</p>
-                        <p>The Group was inaugurated on 25.11.1974. During the past 43 years the group has done many noteworthy community service projects in the fields of Medical Care, Family Planning, Help to differently abled, Tree Plantation, Drug Abuse, National Integration, Blood Donation, Education, Upl Hine. of economically weaker people, Swatch Bharath etc.</p>
-                        <p>In the past the group has won many International &amp; Federation awards and it is known for its best administration. The Group has given many offices to work at Federation and International levels. </p>
-                        <p class="dk"><b>It had the privilege of hosting the International Convention in the year 1982 and after 36 years now we are going to have the pleasure of hosting the same at Madurai in 2018, wherein we expect not less than 1500 delegates from all over India and abroad. </b></p>
-                        <p>The Group has 43 active members and is meeting regularly on the Second Friday of every month. The board meets on the Fourth Friday. Members of the group attend all the International Conventions regularly right from the inception. </p>
-                        <p>The group has started a trust in the name of GIANTS GROUP OF MADURAI TRUST in the year 1996 itself and it has been granted exemption under section 12(A) and <b> 80 G of Income Tax Act 1961 </b> and it is functioning Very well with the support of the members of the groups. </p>
-                    </div>
+            <div class="container">
+                <div class="mem-main-wrap">
+                    <?php
+                    include 'api/db.php';
+                    error_reporting(0);
+                    $registration_id = $_REQUEST['id'];
+                    $select_query = mysqli_query($con,"SELECT * FROM tbl_member_details WHERE registration_id='$registration_id'");
+                    while($fetch_query = mysqli_fetch_array($select_query)){
+                       $payment_status_string = $fetch_query['payment_status']== 0 ? 'Pending':'Approved';
+                       echo "
+                       <div class='row'> 
+                        <div class='col-md-6'> Name </div>
+                        <div class='col-md-6'> ".$fetch_query['name']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Transaction ID </div>
+                        <div class='col-md-6'> ".$fetch_query['transaction_id']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Email Address </div>
+                        <div class='col-md-6'> ".$fetch_query['email']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Phone </div>
+                        <div class='col-md-6'> ".$fetch_query['phone']." </div>
+                       </div>
+                       <div class='row'> 
+                        <div class='col-md-6'> Registration Status </div>
+                        <div class='col-md-6'> ".$payment_status_string." </div>
+                       </div>
+                       ";
+                    }
+                    ?>
                 </div>
             </div>
-            <footer>
-                <div class="footer-wrap">
-                    <div class="container">
-                        <p>&copy; Copyright 2017 - 2018  &nbsp;GIANTS GROUP OF MADURAI</p>
-                    </div>
-                </div>
-            </footer>
         </section>
+        <footer>
+            <div class="footer-wrap">
+                <div class="container">
+                    <p>&copy; Copyright 2017 - 2018 &nbsp; Giants groups of Madurai</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
-
     </script>
 
     <script src="js/vendor/bootstrap.min.js"></script>
-
+    <script src="js/vendor/lightbox.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true
+        })
+    </script>
+
 </body>
 
 </html>

@@ -57,6 +57,7 @@ body {
 .index-banner img {
     margin: 0 auto;
     max-width: 100%;
+    height:270px;
 }
 
 .index-banner:after {
@@ -67,7 +68,7 @@ body {
     background: url("../img/1.png") no-repeat center center;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -1px;
+    bottom: -2px;
 }
 
 .logo-banner {
@@ -86,7 +87,7 @@ body {
 
 .main-wrap .img-main-wrap {
     text-align: center;
-    width: 50%;
+    width: 40%;
     margin: 25px auto;
 
 }
@@ -97,10 +98,14 @@ body {
 
 .main-content {
     margin: 10px auto;
-    width: 80%;
     font-size: 18px;
     color: #4B476B;
     line-height: 36px;
+    text-align: justify;
+}
+
+.dk{
+    color: #EE151F;
 }
 
 /* ==========================================================================
@@ -172,6 +177,18 @@ body {
     margin-bottom: 40px;
 }
 
+.name {
+	color: #EE151F;
+}
+
+.company {
+    color: darkgreen;
+    font-weight: 700;
+}
+
+.convention-member {
+    width: 100%;
+}
 
 /* ==========================================================================
                              Gallery
@@ -276,6 +293,9 @@ border-top:1px solid #555;
     .member_blk:nth-child(4n + 1) {
         margin-left: 0;
     }
+    .convention-member {
+        width: 50%;
+    }
 }
 
 @media(max-width: 610px) {
@@ -366,4 +386,48 @@ border-top:1px solid #555;
         padding: 10px 10px;
     }
 
+}
+/* ==========================================================================
+                        Regitstation.html
+   ========================================================================== */
+
+.reg-panel {
+	margin-top: 5%;
+}
+
+.textarea  {
+	resize: none;
+}
+
+sup {
+    color: red;   
+}
+
+.note {
+    padding: 15px;
+}
+
+.note > h5 {
+    color: #EE151F;
+}
+
+.trans-note {
+    color: #696767;
+}
+
+.payment-details {
+    margin-top: 20px;
+    border: 1px solid #e8dcdc;
+    padding: 20px;
+    padding-bottom: 5px;
+    padding-left: 20px !important;
+}
+
+.payment-details > p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.reg-main {
+    margin-bottom: 20px;
 }
